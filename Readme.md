@@ -69,11 +69,11 @@ class S extends P {
      this.val = this.hasOwnProperty('val') ? this.val : 'value in S'
     
 - effectThisExpr (default: false)  
-  Whether effecting the work on this expression
+  Whether effecting the work on this expression  
   `false` will ignore `this.val = this.abc`
   
 - effectDecorator (default: false)  
-  Whether effecting the work on decorator
+  Whether effecting the work on decorator  
   `false` will ignore `@decorator this.val = 'val'`
 
 ## Note
