@@ -101,6 +101,7 @@ const classMethodTraverseObject = {
     opt = Object.assign({
       effectDecorator: false,
       effectThisExpr: false,
+      onlyEffectConst: false,
       // ignorePrivate: false,
       condType: 'typeofUndefined'
     }, opt)
@@ -133,6 +134,9 @@ const classMethodTraverseObject = {
     else {
       const resultObj = { result: null }
       let hasThisExpression
+      if (opt.onlyEffectConst) {
+        return
+      }
       // effectThisExpr
       if (opt.effectThisExpr) {
         hasThisExpression = false
@@ -168,9 +172,11 @@ module.exports = function (babel) {
     inherits: require('babel-plugin-syntax-class-properties'),
     visitor: {
       /*ClassDeclaration*/
-      ClassExpression(path, data) {
+      Class(path, data) {
         // class Son { ... }
-        path.skip()
+
+        // can't skip transform class properties
+        // path.skip()
         if (!path.node.superClass) {
           return
         }

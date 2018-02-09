@@ -71,7 +71,11 @@ class S extends P {
 - effectThisExpr (default: false)  
   Whether effecting the work on this expression  
   `false` will ignore `this.val = this.abc`
-  
+
+- onlyEffectConst (default: false)  
+  Whether effecting the constant only  
+  `true` will ignore options.effectThisExpr, only effect constant expressions
+
 - effectDecorator (default: false)  
   Whether effecting the work on decorator  
   `false` will ignore `@decorator this.val = 'val'`
