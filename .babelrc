@@ -2,30 +2,14 @@
   "env": {
   },
   "presets": [
-    [
-      "env",
-      {
-        "targets": {
-          "node": "6",
-          "browsers": ["ie>=9"]
-        },
-        "loose": true,
-        "useBuiltIns": true
-      }
-    ]
+    "es2015",
+    "stage-0"
     // "react"
   ],
   "plugins": [
     "transform-decorators-legacy",
     "transform-class-properties",
-    "transform-object-rest-spread",
-    [
-      "transform-runtime",
-      {
-        "polyfill": false,
-        "regenerator": true
-      }
-    ]
+    "transform-object-rest-spread"
   ],
   "ignore": [
   ]
